@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoFixtureGenerator", "AutoFixtureGenerator\AutoFixtureGenerator.csproj", "{47006772-D001-47BF-857F-2FCAAB6C2168}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Test", "Application.Test\Application.Test.csproj", "{26DCE664-18F7-4526-888E-6EE9B1E65E79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{A68FDBF9-4EF2-4989-8CD0-540AE23A6343}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{47006772-D001-47BF-857F-2FCAAB6C2168}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47006772-D001-47BF-857F-2FCAAB6C2168}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47006772-D001-47BF-857F-2FCAAB6C2168}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47006772-D001-47BF-857F-2FCAAB6C2168}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26DCE664-18F7-4526-888E-6EE9B1E65E79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26DCE664-18F7-4526-888E-6EE9B1E65E79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26DCE664-18F7-4526-888E-6EE9B1E65E79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26DCE664-18F7-4526-888E-6EE9B1E65E79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A68FDBF9-4EF2-4989-8CD0-540AE23A6343}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A68FDBF9-4EF2-4989-8CD0-540AE23A6343}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A68FDBF9-4EF2-4989-8CD0-540AE23A6343}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A68FDBF9-4EF2-4989-8CD0-540AE23A6343}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
