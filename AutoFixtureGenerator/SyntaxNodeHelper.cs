@@ -19,18 +19,16 @@ public static class SyntaxNodeHelper
         {
             syntaxNode = syntaxNode.Parent;
 
-            if (syntaxNode == null)
+            switch (syntaxNode)
             {
-                return false;
+                case null:
+                    return false;
+                case T node:
+                    result = node;
+                    return true;
+                default:
+                    return TryGetParentSyntax<T>(syntaxNode, out result);
             }
-
-            if (syntaxNode.GetType() == typeof(T))
-            {
-                result = syntaxNode as T;
-                return true;
-            }
-
-            return TryGetParentSyntax<T>(syntaxNode, out result);
         }
         catch
         {

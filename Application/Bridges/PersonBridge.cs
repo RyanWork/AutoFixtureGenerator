@@ -1,21 +1,24 @@
 ﻿using Application.Models;
+using Application.Stores;
 
 namespace Application.Bridges;
 
 public class PersonBridge
 {
-    private readonly ISomeOtherDependency _someOtherDependency;
+    public string TestProperty { get; set; } = "Hello";
 
-    public PersonBridge(ISomeOtherDependency someOtherDependency)
+    private readonly ISomeOtherStore _someOtherStore;
+    
+    public PersonBridge(ISomeOtherStore someOtherStore)
     {
-        _someOtherDependency = someOtherDependency;
+        _someOtherStore = someOtherStore;
     }
     
     public IEnumerable<Person> GetAllPeople()
     {
         for (int i = 0; i < 10; i++)
         {
-            Person person = new(_someOtherDependency.SomeMethod(), _someOtherDependency.SomeMethod());
+            Person person = new(_someOtherStore.SomeMethod(), _someOtherStore.SomeMethod());
             yield return person;
         }
     }

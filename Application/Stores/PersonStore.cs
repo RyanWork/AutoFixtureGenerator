@@ -7,12 +7,12 @@ public class PersonStore
 {
     private readonly PersonBridge _personBridge;
 
-    private readonly ISomeOtherDependency _someOtherDependency;
+    private readonly ISomeOtherStore _someOtherStore;
     
-    public PersonStore(PersonBridge personBridge, ISomeOtherDependency someOtherDependency)
+    public PersonStore(PersonBridge personBridge, ISomeOtherStore someOtherStore)
     {
         _personBridge = personBridge;
-        _someOtherDependency = someOtherDependency;
+        _someOtherStore = someOtherStore;
     }
 
     public IEnumerable<Person> GetEveryone()

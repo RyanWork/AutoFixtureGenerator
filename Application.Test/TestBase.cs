@@ -1,18 +1,18 @@
 ﻿using AutoFixture;
 using AutoFixture.AutoMoq;
 
-namespace Application.Test
+namespace Application.Test;
+
+public partial class TestBase
 {
-    public partial class TestBase
+    protected readonly IFixture Fixture;
+
+    protected TestBase()
     {
-        protected readonly IFixture Fixture;
-
-        protected TestBase()
-        {
-            Fixture = new Fixture();
-            // .Customize(new AutoMoqCustomization());
-        }
-
-        partial void PopulateFixture();
+        Fixture = new Fixture()
+            .Customize(new AutoMoqCustomization());
+        PopulateFixture();
     }
+
+    partial void PopulateFixture();
 }
