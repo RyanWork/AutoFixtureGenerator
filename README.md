@@ -50,7 +50,7 @@ public class AutoFixtureGenerator : ISourceGenerator
 ## Benchmarks
 Due to the nature of proprietary software, I have not included all of the source code for benchmarking. However, I will share some reasonable pieces of code in which some implementation could be interpreted as well as an explanation of the difference between the two benchmarked results:
 
-The following code snippet compares the times taken to generate a useable `IFixture` instance. `TestUtils.BaseFixture` uses reflection to determine what `Mock<T>`/`Lazy<T>` instances it needs to freeze and inject. The second test just instantiates a `new TestBase()` in which an `IFixture` instance lives. Both contain the most minimal implementation to extract values that it should create.
+The following code snippet compares the times taken to generate a useable `IFixture` instance. `TestUtils.BaseFixture` uses reflection to determine what `Mock<T>`/`Lazy<T>` instances it needs to freeze and inject. The second test just instantiates a `new TestBase()` in which an `IFixture` instance lives. This `IFixture` instance uses the source generator to determine exactly what types it needs to inject and injects a `Mock<T>` and `Lazy<T>` instance. Both contain the most minimal implementation to extract values that it should create.
 ```csharp
 using Application.Test;  
 using AutoFixture;  
@@ -63,11 +63,11 @@ public static class Program
 {  
     public class AutoFixturePopulate  
     {  
-		[Benchmark]  
-		public IFixture UsingReflection() => TestUtils.BaseFixture();  
+        [Benchmark]  
+        public IFixture UsingReflection() => TestUtils.BaseFixture();  
   
-		[Benchmark]  
-		public TestBase UsingSourceGeneratedValues() => new TestBase();
+        [Benchmark]  
+        public TestBase UsingSourceGeneratedValues() => new TestBase();
     }  
   
     public static void Main(string[] args)  
