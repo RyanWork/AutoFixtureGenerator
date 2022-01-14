@@ -79,7 +79,7 @@ public static class Program
 
 
 ### Results
-Comparing the two results, we can see a ~60% increase in average time taken to generate an `IFixture` instance. As the source generated version completely removes the need for reflection, we would expect a sizeable performance improvement.
+Comparing the two results, we can see a ~40% increase in average time taken to generate an `IFixture` instance. As the source generated version completely removes the need for reflection, we would expect a sizeable performance improvement.
 
 |  Method |     Mean |     Error |    StdDev |
 |-------- |---------:|----------:|----------:|
